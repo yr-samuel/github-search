@@ -14,3 +14,14 @@
   width: 100px;
   height: auto;
 }
+
+@media (max-width: 599px) {
+  .box-user {
+    width: 85%;
+  }
+
+  .box-user > img {
+    width: 100px;
+    height: auto;
+  }
+}

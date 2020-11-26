@@ -10,10 +10,9 @@ export default function UserResults() {
   );
 
   let flag =
-    userStats.totalCount > 1
-      ? `Encontrados ${userStats.totalCount} resultados para ${userStats.user} `
-      : `Encontrado ${userStats.totalCount} resultado para ${userStats.user}`;
-
+    userStats.totalCount == 1
+      ? `Encontrado ${userStats.totalCount} resultado para ${userStats.user}`
+      : `Encontrados ${userStats.totalCount} resultados para ${userStats.user} `;
   if (userStats.loading) {
     return <Loader />;
   }

@@ -3,15 +3,20 @@ import User from "./User";
 import "./_userResults.css";
 import * as ReactRedux from "react-redux";
 import { IReducers } from "../../redux/createStore";
+import Loader from "../Loader";
 export default function UserResults() {
   const userStats = ReactRedux.useSelector(
     (reducers: IReducers) => reducers.github
   );
 
   let flag =
-    userStats.users.total_count > 1
-      ? `Encontrados ${userStats.users.total_count} resultados para ${userStats.user} `
-      : `Encontrado ${userStats.users.total_count} resultado para ${userStats.user}`;
+    userStats.totalCount > 1
+      ? `Encontrados ${userStats.totalCount} resultados para ${userStats.user} `
+      : `Encontrado ${userStats.totalCount} resultado para ${userStats.user}`;
+
+  if (userStats.loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="mom-userResults">
@@ -19,17 +24,16 @@ export default function UserResults() {
         <span>{userStats.user ? flag : null}</span>
       </div>
       <div className="users">
-        {userStats.users.items
-          ? userStats.users.items.map((current: any) => {
-              return (
-                <User
-                  key={current.id}
-                  foto={current.avatar_url}
-                  loginNome={current.login}
-                />
-              );
-            })
-          : null}
+        {userStats.users &&
+          userStats.users.map((current: any) => {
+            return (
+              <User
+                key={current.id}
+                foto={current.avatar_url}
+                loginNome={current.login}
+              />
+            );
+          })}
       </div>
     </div>
   );

@@ -30,6 +30,7 @@ export default function UserResults() {
                 key={current.id}
                 foto={current.avatar_url}
                 loginNome={current.login}
+                githubLink={current.html_url}
               />
             );
           })}

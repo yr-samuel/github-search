@@ -15,9 +15,11 @@ export default function Header() {
 
     clearTimeout(TIMEOUT_ID);
 
+    // if (value !== "") {
     TIMEOUT_ID = setTimeout(() => {
       dispatch(githubAction(value));
-    }, 2000);
+    }, 1000);
+    // }
   }
 
   return (

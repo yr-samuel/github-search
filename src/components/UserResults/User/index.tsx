@@ -4,14 +4,17 @@ import "./_user.css";
 interface user {
   foto: string;
   loginNome: string;
+  githubLink: string;
 }
 
 export default function User(props: user) {
   return (
     <div className="box-user">
-      <img src={props.foto} alt="" />
+      <a href={props.githubLink}>
+        <img src={props.foto} alt="" />
 
-      <span>{props.loginNome}</span>
+        <span>{props.loginNome}</span>
+      </a>
     </div>
   );
 }

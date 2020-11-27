@@ -1,6 +1,6 @@
 # Github Search
 
-- Para interagir online, acesse: [Github Search](searchongithub.netlify.app)
+- Para interagir online, acesse: [Github Search](https://searchongithub.netlify.app)
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/64391583/100306456-349eac00-2f82-11eb-9f50-30c22708b6ac.gif)
 
